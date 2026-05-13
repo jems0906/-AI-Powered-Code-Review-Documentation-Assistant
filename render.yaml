@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: AI-Powered-Code-Review-Documentation-Assistant
+    env: static
+    buildCommand: npm run build
+    publishPath: dist
+    branch: main
