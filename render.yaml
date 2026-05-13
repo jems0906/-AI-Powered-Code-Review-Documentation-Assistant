@@ -3,5 +3,5 @@ services:
     name: AI-Powered-Code-Review-Documentation-Assistant
     env: static
     buildCommand: npm run build
-    publishPath: dist
+    staticPublishPath: dist
     branch: main
