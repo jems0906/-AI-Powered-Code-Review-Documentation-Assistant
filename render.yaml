@@ -1,5 +1,5 @@
 services:
-  - type: static
+  - type: web
     name: AI-Powered-Code-Review-Documentation-Assistant
     env: static
     buildCommand: npm run build
