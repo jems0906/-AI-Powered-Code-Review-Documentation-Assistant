@@ -3,7 +3,6 @@ Integration-style API tests using httpx TestClient.
 Requires DATABASE_URL pointing to a test DB.
 """
 import pytest
-import pytest_asyncio
 from httpx import AsyncClient, ASGITransport
 from main import app
 

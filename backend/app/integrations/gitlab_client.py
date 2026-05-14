@@ -3,7 +3,6 @@ GitLab API client — fetches MR diffs/metadata and posts review notes.
 """
 import structlog
 import httpx
-from typing import Optional
 from urllib.parse import quote_plus
 
 from app.core.config import settings

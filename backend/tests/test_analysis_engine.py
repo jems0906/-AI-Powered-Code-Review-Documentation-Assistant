@@ -1,7 +1,6 @@
 """
 Tests for the code analysis engine.
 """
-import pytest
 from app.analysis.engine import CodeAnalysisEngine
 
 SAMPLE_DIFF = """diff --git a/app/utils.py b/app/utils.py
