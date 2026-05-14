@@ -20,9 +20,15 @@ jobs:
         id: image_names
         shell: bash
         run: |
-          repo_lower=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')
-          echo "backend_image=ghcr.io/${repo_lower}/backend" >> "$GITHUB_OUTPUT"
-          echo "frontend_image=ghcr.io/${repo_lower}/frontend" >> "$GITHUB_OUTPUT"
+          owner=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
+          repo=$(echo '${{ github.event.repository.name }}' | tr '[:upper:]' '[:lower:]')
+          repo=$(echo "$repo" | sed -E 's/[^a-z0-9._-]+/-/g; s/^[._-]+//; s/[._-]+$//')
+          if [ -z "$repo" ]; then
+            repo="app"
+          fi
+
+          echo "backend_image=ghcr.io/${owner}/${repo}/backend" >> "$GITHUB_OUTPUT"
+          echo "frontend_image=ghcr.io/${owner}/${repo}/frontend" >> "$GITHUB_OUTPUT"
 
       - name: Log in to Container Registry
         uses: docker/login-action@v3
