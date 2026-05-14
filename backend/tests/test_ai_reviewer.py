@@ -1,6 +1,7 @@
 """
 Tests for the AI reviewer response parser (no real API calls).
 """
+import pytest
 import json
 from unittest.mock import AsyncMock, patch
 from app.ai.reviewer import AIReviewer
